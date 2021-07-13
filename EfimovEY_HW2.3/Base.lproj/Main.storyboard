@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EfimovEY_HW2_3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="EfimovEY_HW2_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,6 +55,9 @@
                                 <state key="normal" title="Log in">
                                     <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="JtO-Qs-Vb3" kind="presentation" id="XHa-pG-z8a"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -70,10 +73,49 @@
                             <constraint firstItem="FVy-Zr-KVs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zt4-BL-bab"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameLoginTF" destination="XPq-sd-Nxz" id="P1A-JE-4LM"/>
+                        <outlet property="passwordLoginTF" destination="5aI-NW-2Cm" id="hqn-IH-Vdt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.75" y="62.323943661971832"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="y3n-km-jAW">
+            <objects>
+                <viewController id="JtO-Qs-Vb3" customClass="WelcomeViewController" customModule="EfimovEY_HW2_3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lBz-Pd-Dpp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JnG-6f-Ype">
+                                <rect key="frame" x="99.5" y="174" width="121" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.99181514978408813" green="0.74178355932235718" blue="0.44300159811973572" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rIF-i9-aNo">
+                                <rect key="frame" x="135" y="247" width="50" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tyM-LF-8kM"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <constraints>
+                            <constraint firstItem="JnG-6f-Ype" firstAttribute="centerX" secondItem="tyM-LF-8kM" secondAttribute="centerX" id="3Y4-Ig-doX"/>
+                            <constraint firstItem="rIF-i9-aNo" firstAttribute="centerX" secondItem="tyM-LF-8kM" secondAttribute="centerX" id="SFm-tf-smx"/>
+                            <constraint firstItem="rIF-i9-aNo" firstAttribute="top" secondItem="JnG-6f-Ype" secondAttribute="bottom" constant="37" id="mt1-nM-OaP"/>
+                            <constraint firstItem="JnG-6f-Ype" firstAttribute="top" secondItem="tyM-LF-8kM" secondAttribute="top" constant="174" id="vPP-W3-st0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bum-Q9-NY5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KPs-W4-yAf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933.75" y="61.267605633802816"/>
         </scene>
     </scenes>
     <resources>
