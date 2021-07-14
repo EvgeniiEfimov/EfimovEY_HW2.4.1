@@ -19,7 +19,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         guard let user = userWelcome else { return }
         welcomeLabel.text = "Welcome, \(user)"
-        exitButton.layer.cornerRadius = 5
+        exitButton.layer.cornerRadius = 6
     }
 
 }
