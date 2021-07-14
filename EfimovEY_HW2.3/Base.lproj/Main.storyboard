@@ -19,17 +19,23 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="FVy-Zr-KVs">
                                 <rect key="frame" x="18" y="352" width="284" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiB-Hi-tCx">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiB-Hi-tCx">
                                         <rect key="frame" x="0.0" y="0.0" width="129" height="30"/>
                                         <state key="normal" title="Forgot user name?">
                                             <color key="titleColor" systemColor="systemPurpleColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="helpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lsp-Ne-Ncw"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbw-Jf-xYl">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbw-Jf-xYl">
                                         <rect key="frame" x="161" y="0.0" width="123" height="30"/>
                                         <state key="normal" title="Forgot password?">
                                             <color key="titleColor" systemColor="systemPurpleColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="helpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v4i-vw-IFo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -56,7 +62,7 @@
                                     <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="JtO-Qs-Vb3" kind="presentation" id="XHa-pG-z8a"/>
+                                    <action selector="logIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Y6-cU-cdd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -74,8 +80,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logInButton" destination="CFk-to-xsR" id="afr-Pc-fW5"/>
                         <outlet property="nameLoginTF" destination="XPq-sd-Nxz" id="P1A-JE-4LM"/>
                         <outlet property="passwordLoginTF" destination="5aI-NW-2Cm" id="hqn-IH-Vdt"/>
+                        <segue destination="JtO-Qs-Vb3" kind="show" identifier="welcomeVC" id="UMq-J3-jT2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -85,40 +93,62 @@
         <!--Welcome View Controller-->
         <scene sceneID="y3n-km-jAW">
             <objects>
-                <viewController id="JtO-Qs-Vb3" customClass="WelcomeViewController" customModule="EfimovEY_HW2_3" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="JtO-Qs-Vb3" customClass="WelcomeViewController" customModule="EfimovEY_HW2_3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lBz-Pd-Dpp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JnG-6f-Ype">
-                                <rect key="frame" x="99.5" y="174" width="121" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="109.5" y="174" width="101" height="28"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
                                 <color key="textColor" red="0.99181514978408813" green="0.74178355932235718" blue="0.44300159811973572" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rIF-i9-aNo">
-                                <rect key="frame" x="135" y="247" width="50" height="54"/>
+                                <rect key="frame" x="135" y="239" width="50" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFp-yU-7bu">
+                                <rect key="frame" x="105" y="348" width="110" height="36"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="21"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleColor" systemColor="systemPurpleColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lic-nB-lZS" kind="unwind" unwindAction="unwindGoToLoginVCWithSend:" id="O8E-rO-aEd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tyM-LF-8kM"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
                             <constraint firstItem="JnG-6f-Ype" firstAttribute="centerX" secondItem="tyM-LF-8kM" secondAttribute="centerX" id="3Y4-Ig-doX"/>
+                            <constraint firstItem="nFp-yU-7bu" firstAttribute="top" secondItem="rIF-i9-aNo" secondAttribute="bottom" constant="55" id="NeC-aE-Hio"/>
                             <constraint firstItem="rIF-i9-aNo" firstAttribute="centerX" secondItem="tyM-LF-8kM" secondAttribute="centerX" id="SFm-tf-smx"/>
+                            <constraint firstItem="nFp-yU-7bu" firstAttribute="leading" secondItem="tyM-LF-8kM" secondAttribute="leading" constant="105" id="enI-Jq-f69"/>
+                            <constraint firstItem="tyM-LF-8kM" firstAttribute="trailing" secondItem="nFp-yU-7bu" secondAttribute="trailing" constant="105" id="gEW-TR-utF"/>
                             <constraint firstItem="rIF-i9-aNo" firstAttribute="top" secondItem="JnG-6f-Ype" secondAttribute="bottom" constant="37" id="mt1-nM-OaP"/>
                             <constraint firstItem="JnG-6f-Ype" firstAttribute="top" secondItem="tyM-LF-8kM" secondAttribute="top" constant="174" id="vPP-W3-st0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bum-Q9-NY5"/>
+                    <connections>
+                        <outlet property="exitButton" destination="nFp-yU-7bu" id="H6k-ya-Y0c"/>
+                        <outlet property="welcomeLabel" destination="JnG-6f-Ype" id="U9n-IW-iIG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPs-W4-yAf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="lic-nB-lZS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="933.75" y="61.267605633802816"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

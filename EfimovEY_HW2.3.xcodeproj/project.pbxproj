@@ -60,8 +60,8 @@
 			children = (
 				CECF3914269D8F1000FF6BA0 /* AppDelegate.swift */,
 				CECF3916269D8F1000FF6BA0 /* SceneDelegate.swift */,
-				CECF3918269D8F1000FF6BA0 /* LoginViewController.swift */,
 				CECF391A269D8F1000FF6BA0 /* Main.storyboard */,
+				CECF3918269D8F1000FF6BA0 /* LoginViewController.swift */,
 				CECF392E269D9A1100FF6BA0 /* WelcomeViewController.swift */,
 				CECF391D269D8F1100FF6BA0 /* Assets.xcassets */,
 				CECF391F269D8F1100FF6BA0 /* LaunchScreen.storyboard */,
