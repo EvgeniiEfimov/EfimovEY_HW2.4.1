@@ -13,8 +13,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordLoginTF: UITextField!
     @IBOutlet weak var logInButton: UIButton!
     
-    let login = "Eugenya"
-    let password = "Bruyko"
+    private let login = "Eugenya"
+    private let password = "Bruyko"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,8 @@ class LoginViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -36,17 +37,16 @@ class LoginViewController: UIViewController {
             performSegue(withIdentifier: "welcomeVC", sender: nil)
         }
         else {
-            toCallAlertAttention()
+            let title = "Attention"
+            let message = "Incorrect username or password"
+            toCallAlertAttention(title: title, message: message)
+            passwordLoginTF.text = ""
         }
     }
     
     @IBAction func helpButton(_ sender: UIButton) {
-        if sender.tag == 1 {
-            toCallAlertHelp(data: login)
-        }
-        else {
-            toCallAlertHelp(data: password)
-        }
+        sender.tag == 1 ? toCallAlertAttention(title: nil, message: login) :
+            toCallAlertAttention(title: nil, message: password)
     }
     
     @IBAction func unwindGoToLoginVC (send: UIStoryboardSegue) {
@@ -54,29 +54,16 @@ class LoginViewController: UIViewController {
         passwordLoginTF.text = ""
     }
     
-   private func toCallAlertAttention() {
+    private func toCallAlertAttention( title: String?,  message: String) {
         let alert = UIAlertController(
-            title: "Attention",
-            message: "Incorrect username or password",
-            preferredStyle: UIAlertController.Style.alert)
+            title: title,
+            message: message,
+            preferredStyle: .alert)
         alert.addAction(UIAlertAction(
                             title: "Ok",
                             style: .cancel,
                             handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
-    private func toCallAlertHelp(data: String) {
-         let alert = UIAlertController(
-             title: nil,
-             message: "\(data)",
-             preferredStyle: UIAlertController.Style.alert)
-         alert.addAction(UIAlertAction(
-                             title: "Ok",
-                             style: .cancel,
-                             handler: nil))
-         present(alert, animated: true, completion: nil)
-     }
-
 }
 
